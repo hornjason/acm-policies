@@ -7,7 +7,7 @@ metadata:
     subscription-pause: "false"
   annotations:
     apps.open-cluster-management.io/github-path: policies/registry-pv-nfs/base
-    apps.open-cluster-management.io/github-branch: registry-pv-nfs
+    apps.open-cluster-management.io/github-branch: jhorn
 spec:
   channel: custom-policies/acm-gitops-github
   placement:

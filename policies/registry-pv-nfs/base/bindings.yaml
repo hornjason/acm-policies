@@ -1,12 +1,12 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-migrate-metrics
+  name: binding-policy-registry-pv-nfs
 placementRef:
-  name: placement-policy-migrate-metrics
+  name: placement-policy-registry-pv-nfs
   apiGroup: apps.open-cluster-management.io
   kind: PlacementRule
 subjects:
-  - name: policy-migrate-metrics
+  - name: policy-registry-pv-nfs
     apiGroup: policy.open-cluster-management.io
     kind: Policy

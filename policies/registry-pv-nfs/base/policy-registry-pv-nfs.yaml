@@ -28,13 +28,14 @@ spec:
             metadata:
               name: registry-pv
             spec:
-        - complianceType: musthave
-          objectDefinition:
-            apiVersion: imageregistry.operator.openshift.io/v1
-            kind: Config
-            metadata:
-              name: cluster
-            spec:
+              accessModes:
+                - ReadWriteMany
+              capacity:
+                  storage: 100Gi
+              nfs:
+                path: /export
+                server: 192.168.1.238
+              persistentVolumeReclaimPolicy: Retain
         remediationAction: inform
         severity: low
   remediationAction: inform

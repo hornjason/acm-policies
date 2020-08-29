@@ -5,6 +5,6 @@ metadata:
   namespace: custom-policies
 spec:
   type: GitHub
-  pathname: https://github.com/redhat-cop/acm-policies.git
+  pathname: https://github.com/hornjason/acm-policies.git
   #secretRef:
   #  name: github-secret
