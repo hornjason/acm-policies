@@ -19,9 +19,9 @@ spec:
         severity: low
         namespaceSelector:
           exclude:
-          - kube-*
+          - 'kube-*'
           include:
-          - *
+          - '*'
         object-templates:
         - complianceType: musthave
           objectDefinition:
@@ -38,3 +38,4 @@ spec:
                 path: /export
                 server: 192.168.1.238
               persistentVolumeReclaimPolicy: Retain
+              volumeMode: Filesystem
