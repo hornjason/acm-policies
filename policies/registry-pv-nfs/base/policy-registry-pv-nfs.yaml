@@ -15,7 +15,7 @@ spec:
         metadata:
           name: policy-registry-pv-nfs
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           namespaceSelector:
             exclude: ["kube-*"]
@@ -37,9 +37,3 @@ spec:
                     server: 192.168.1.238
                   persistentVolumeReclaimPolicy: Retain
                   volumeMode: Filesystem
-            - complianceType: mustnothave
-              objectDefinition:
-                apiVersion: v1
-                kind: PersistentVolume
-                metadata:
-                  name: registry-pv
