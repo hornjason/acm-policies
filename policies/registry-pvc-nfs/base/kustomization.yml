@@ -1,5 +1,0 @@
-resources:
-- placementrule.yaml
-- bindings.yaml
-- policy-registry-pv-nfs.yaml
-

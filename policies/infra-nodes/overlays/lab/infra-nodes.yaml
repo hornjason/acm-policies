@@ -5,7 +5,7 @@ metadata:
     policy.open-cluster-management.io/categories: ""
     policy.open-cluster-management.io/controls: ""
     policy.open-cluster-management.io/standards: ""
-  name: policy-registry-pv-nfs
+  name: policy-infra-nodes
 spec:
   disabled: false
   policy-templates:
@@ -13,7 +13,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-registry-pv-nfs
+          name: policy-infra-nodes
         spec:
           remediationAction: enforce
           severity: low
@@ -24,16 +24,16 @@ spec:
             - complianceType: musthave
               objectDefinition:
                 apiVersion: v1
-                kind: PersistentVolume
+                kind: Node
                 metadata:
-                  name: registry-pv
-                spec:
-                  accessModes:
-                    - ReadWriteMany
-                  capacity:
-                      storage: 100Gi
-                  nfs:
-                    path: /export
-                    server: 192.168.1.238
-                  persistentVolumeReclaimPolicy: Retain
-                  volumeMode: Filesystem
+                  name: worker-0
+                  labels:
+                    node-role.kubernetes.io/infra: ""
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: v1
+                kind: Node
+                metadata:
+                  name: worker-1
+                  labels:
+                    node-role.kubernetes.io/infra: ""
