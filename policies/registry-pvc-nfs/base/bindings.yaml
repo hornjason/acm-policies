@@ -1,0 +1,12 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-registry-pvc-nfs
+placementRef:
+  name: placement-policy-registry-pvc-nfs
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: policy-registry-pvc-nfs
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy

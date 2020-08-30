@@ -3,4 +3,4 @@
   value: 
     storage:
       pvc:
-        claim:
+        claim: image-registry-pvc
