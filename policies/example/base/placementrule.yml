@@ -5,4 +5,4 @@ metadata:
 spec:
   clusterSelector:
     matchExpressions:
-      - {key: cloud, operator: In, values: ["Amazon"]}
+      - {key: environment, operator: In, values: ["lab"]}
