@@ -36,3 +36,15 @@ spec:
                       storage: 100Gi
                   volumeMode: Filesystem
                   storageClassName: ""
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: imageregistry.operator.openshift.io/v1
+                kind: Config
+                metadata:
+                  name: cluster
+                spec:
+                   replicas: 2
+                   storage:
+                     pvc:
+                       claim: image-registry-pvc
+ 
