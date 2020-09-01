@@ -9,6 +9,7 @@ metadata:
 spec:
   disabled: false
   policy-templates:
+  remediationAction: enforce
   - objectDefinition:
       apiVersion: policy.open-cluster-management.io/v1
       kind: ConfigurationPolicy
@@ -52,6 +53,7 @@ spec:
                 telemeterClient:
                   nodeSelector:
                     node-role.kubernetes.io/infra: ""
+
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
