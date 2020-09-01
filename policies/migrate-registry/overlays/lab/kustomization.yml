@@ -1,2 +1,5 @@
+bases:
+- ../../base
+
 resources:
 - policy-migrate-registry.yaml
