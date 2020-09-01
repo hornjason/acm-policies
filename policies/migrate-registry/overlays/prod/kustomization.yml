@@ -1,5 +1,5 @@
 bases:
 - ../../base
 
-resources:
-- placementrule.yml
+patchesStrategicMerge:
+- placementrule.yaml
