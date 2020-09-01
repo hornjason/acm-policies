@@ -6,7 +6,7 @@ metadata:
   labels:
     subscription-pause: "false"
   annotations:
-    apps.open-cluster-management.io/github-path: policies/migrate-registry/base
+    apps.open-cluster-management.io/github-path: policies/migrate-registry/overlays/lab
     apps.open-cluster-management.io/github-branch: migrate-registry
 spec:
   channel: custom-policies/acm-gitops-github

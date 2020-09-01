@@ -1,6 +1,0 @@
-resources:
-- policy-create-infra-machine-config-pool.yaml
-- bindings.yaml
-- placementrule.yaml
-
-

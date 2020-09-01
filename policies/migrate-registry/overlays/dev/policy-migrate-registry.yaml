@@ -5,7 +5,7 @@ metadata:
     policy.open-cluster-management.io/categories: ""
     policy.open-cluster-management.io/controls: ""
     policy.open-cluster-management.io/standards: ""
-  name: policy-create-infra-machine-config-pool
+  name: policy-migrate-registry
 spec:
   disabled: false
   policy-templates:
@@ -13,31 +13,22 @@ spec:
       apiVersion: policy.open-cluster-management.io/v1
       kind: ConfigurationPolicy
       metadata:
-        name: policy-create-infra-machine-config-pool
+        name: policy-migrate-registry
       spec:
         namespaceSelector:
           exclude:
           - kube-*
           include:
-          - default
+          - openshift-image-registry
         object-templates:
         - complianceType: musthave
           objectDefinition:
-            apiVersion: machineconfiguration.openshift.io/v1
-            kind: MachineConfigPool
+            apiVersion: imageregistry.operator.openshift.io/v1
+            kind: Config
             metadata:
-              name: infra
+              name: cluster
             spec:
-              machineConfigSelector:
-                matchExpressions:
-                - key: machineconfiguration.openshift.io/role
-                  operator: In
-                  values:
-                  - worker # used for testing
-                  - infra
               nodeSelector:
-                matchLabels:
-                  node-role.kubernetes.io/infra: "" # testing 
+                  node-role.kubernetes.io/infra: "" 
         remediationAction: enforce
         severity: low
-  remediationAction: enforce
