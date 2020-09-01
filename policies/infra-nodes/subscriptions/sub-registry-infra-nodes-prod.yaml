@@ -1,0 +1,14 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: acm-policies-infra-nodes
+  namespace: custom-policies
+  labels:
+    subscription-pause: "false"
+  annotations:
+    apps.open-cluster-management.io/github-path: policies/infra-nodes/overlays/prod
+    apps.open-cluster-management.io/github-branch: jhorn
+spec:
+  channel: custom-policies/acm-gitops-github
+  placement:
+    local: true

@@ -2,4 +2,4 @@ bases:
 - ../../base
 #
 patchesStrategicMerge:
-- policy-migrate-metrics.yaml
+- placementrule.yaml

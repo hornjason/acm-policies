@@ -1,4 +1,4 @@
 resources:
-- policy-infra-nodes.yaml
-
-
+- bindings.yml
+- placementrule.yml
+- policy-infra-nodes.yml
