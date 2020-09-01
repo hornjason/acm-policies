@@ -2,4 +2,4 @@ bases:
 - ../../base
 
 resources:
-- placementrule.yml
+- placementrule.yaml
