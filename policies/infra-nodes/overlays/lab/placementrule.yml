@@ -1,7 +1,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-infra-nodes
+  name: placement-policy-infra-nodes-lab
 spec:
   clusterSelector:
     matchExpressions:

@@ -3,3 +3,5 @@ bases:
 
 patchesStrategicMerge:
 - placementrule.yml
+- bindings.yml
+- policy-infra-nodes.yml

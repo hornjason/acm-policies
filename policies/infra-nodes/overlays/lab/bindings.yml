@@ -1,0 +1,12 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-infra-nodes-lab
+placementRef:
+  name: placement-policy-infra-nodes-lab
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: policy-infra-nodes-lab
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
