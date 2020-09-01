@@ -1,4 +1,5 @@
+bases:
+- ../../base
+
 resources:
-- placementrule.yaml
-- bindings.yaml
-- policy-migrate-registry.yaml
+- placementrule.yml

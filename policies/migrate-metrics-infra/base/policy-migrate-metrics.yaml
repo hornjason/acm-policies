@@ -8,6 +8,7 @@ metadata:
   name: policy-migrate-metrics
 spec:
   disabled: false
+  remediationAction: enforce
   policy-templates:
   - objectDefinition:
       apiVersion: policy.open-cluster-management.io/v1
@@ -52,4 +53,3 @@ spec:
                     node-role.kubernetes.io/infra: ""
         remediationAction: enforce
         severity: low
-  remediationAction: enforce

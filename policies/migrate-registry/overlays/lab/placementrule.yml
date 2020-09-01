@@ -8,4 +8,4 @@ spec:
       - key: environment
         operator: In
         values:
-          - prod
+          - lab
