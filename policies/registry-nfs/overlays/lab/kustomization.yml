@@ -3,3 +3,4 @@ bases:
 
 patchesStrategicMerge:
 - placementrule.yml
+- policy-registry-nfs.yaml 
