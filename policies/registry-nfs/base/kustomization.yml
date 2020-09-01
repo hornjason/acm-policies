@@ -1,3 +1,5 @@
 resources:
+- bindings.yml
+- placementrule.yml
 - policy-registry-nfs.yaml
 

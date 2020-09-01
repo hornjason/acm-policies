@@ -8,6 +8,7 @@ metadata:
   name: policy-registry-nfs
 spec:
   disabled: false
+  remediationAction: enforce
   policy-templates:
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
@@ -34,7 +35,7 @@ spec:
                       storage: 100Gi
                   nfs:
                     path: /export
-                    server: 192.168.1.238
+                    server: 1.1.1.1
                   persistentVolumeReclaimPolicy: Retain
                   volumeMode: Filesystem
             - complianceType: musthave
@@ -63,29 +64,3 @@ spec:
                    storage:
                      pvc:
                        claim: image-registry-pvc
- 
----
-apiVersion: policy.open-cluster-management.io/v1
-kind: PlacementBinding
-metadata:
-  name: binding-policy-registry-nfs
-placementRef:
-  name: placement-policy-registry-nfs
-  apiGroup: apps.open-cluster-management.io
-  kind: PlacementRule
-subjects:
-  - name: policy-registry-nfs
-    apiGroup: policy.open-cluster-management.io
-    kind: Policy
----
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
-metadata:
-  name: placement-policy-registry-nfs
-spec:
-  clusterSelector:
-    matchExpressions:
-      - key: environment
-        operator: In
-        values:
-          - lab
