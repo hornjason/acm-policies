@@ -28,9 +28,14 @@ spec:
             metadata:
               name: default
             spec:
-              nodeSelector:
-                matchLabels:
-                  node-role.kubernetes.io/dev: "" # testing 
+              nodePlacement:
+                nodeSelector:
+                  matchLabels:
+                    node-role.kubernetes.io/dev: "" # testing 
+              tolerations:
+                - effect: NoSchedule
+                  key: node-function
+                  operator: Exists
         remediationAction: enforce
         severity: low
   remediationAction: enforce

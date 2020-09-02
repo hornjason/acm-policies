@@ -6,8 +6,8 @@ metadata:
   labels:
     subscription-pause: "false"
   annotations:
-    apps.open-cluster-management.io/github-path: policies/migrate-router/base
-    apps.open-cluster-management.io/github-branch: migrate-router
+    apps.open-cluster-management.io/github-path: policies/migrate-router/overlays/lab
+    apps.open-cluster-management.io/github-branch: jhorn
 spec:
   channel: custom-policies/acm-gitops-github
   placement:
