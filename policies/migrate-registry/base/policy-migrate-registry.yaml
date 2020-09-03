@@ -29,6 +29,7 @@ spec:
             metadata:
               name: cluster
             spec:
+              managementState: Managed
               nodeSelector:
                   node-role.kubernetes.io/infra: "" 
         remediationAction: enforce
