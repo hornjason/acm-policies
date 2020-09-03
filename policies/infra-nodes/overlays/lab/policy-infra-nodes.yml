@@ -27,29 +27,7 @@ spec:
             apiVersion: v1
             kind: Node
             metadata:
-              name: worker-1
+              name: worker-2
               labels:
                 node-role.kubernetes.io/infra: ""
                 node-role.kubernetes.io/worker-:
-        - complianceType: musthave
-          objectDefinition:
-            apiVersion: machineconfiguration.openshift.io/v1
-            kind: MachineConfigPool
-            metadata:
-              name: infra
-            spec:
-              machineConfigSelector:
-                matchExpressions:
-                  - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker,infra]}
-              nodeSelector:
-                matchLabels:
-                  node-role.kubernetes.io/infra: ""
-        - complianceType: musthave
-          objectDefinition:
-            apiVersion: config.openshift.io/v1
-            kind: Scheduler
-            metadata:
-              name: cluster
-            spec:
-              mastersSchedulable: false
-              defaultNodeSelector: "node-role.kubernetes.io/worker="
