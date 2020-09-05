@@ -60,6 +60,7 @@ spec:
                 metadata:
                   name: cluster
                 spec:
+                   managementState: Managed
                    replicas: 2
                    storage:
                      pvc:

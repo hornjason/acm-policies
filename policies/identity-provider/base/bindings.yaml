@@ -1,0 +1,12 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-identity-provider
+placementRef:
+  name: placement-policy-identity-provider
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: policy-identity-provider
+    apiGroup: policy.open-cluster-management.io
+    kind: Policy
